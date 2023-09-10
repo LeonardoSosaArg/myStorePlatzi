@@ -1,0 +1,10 @@
+<section *ngIf="user">
+  <div class="container mt-5">
+    <h2>My Profile</h2>
+    <hr>
+    <p>Nombre: {{user.name}}</p>
+    <p>Email: {{user.email}}</p>
+    <p>Role: {{user.role}}</p>
+    <button *ngIf="user.role == 'admin'" button type="button" (click)="goToCms()" class="btn btn-primary mt-3" >Ir al CMS ></button>
+  </div>
+</section>

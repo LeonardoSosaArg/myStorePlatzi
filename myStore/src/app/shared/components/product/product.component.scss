@@ -1,0 +1,31 @@
+p,
+h2 {
+    margin: 0;
+}
+
+.container-buttons {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    gap: 5px;
+    margin-top: 3px;
+    color: white;
+    justify-content: center;
+}
+
+.container-details {
+    line-height: 22px;
+    padding-top: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.container-products {
+    padding: 4px;
+}

@@ -1,0 +1,17 @@
+<section class="login__section">
+    <div class="login__container">
+        <form [formGroup]="formulario" class="login__form">
+            <h1>Iniciar Sesión</h1>
+            <div>
+                <input formControlName="email" class="form-control" type="text" placeholder="Email">
+                <small *ngIf="emailNoValido" class="form-text text-danger">*Debe ingresar un email</small>
+            </div>
+            <div>
+                <input formControlName="password" class="form-control" type="password" placeholder="Contraseña">
+                <small *ngIf="passwordNoValido" class="form-text text-danger">*Debe ingresar una contraseña</small>
+            </div>
+            <button (click)="login()" class="btn btn-primary">Login</button>
+            <button (click)="navigateTo('create-user')" class="btn btn-success">Create User</button>
+        </form>
+    </div>
+</section>

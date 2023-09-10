@@ -1,0 +1,56 @@
+<div class="show-mobile">
+  <div>
+    <button (click)="toggleMenu()">
+      <img src="./assets/svg/icon_menu.svg" alt="menu">
+    </button>
+    <a href="">
+      <img src="./assets/svg/logo_yard_sale.svg" alt="logo">
+    </a>
+    <a href="">
+      <img src="./assets/svg/icon_shopping_cart.svg" alt="logo">
+      <span class="counter">{{contador}}</span>
+    </a>
+  </div>
+
+  <div class="side-menu" [class.active]="activeMenu">
+    <div class="items-side">
+      <button (click)="toggleMenu()"><img src="./assets/img/marca-de-la-cruz.png" alt="cruz"></button>
+      <ul>
+        <li class="link"><a routerLinkActive="active" routerLink="login">Login</a></li>
+        <li class="link" ><a routerLinkActive="active" routerLink="home">All</a></li>
+        <li class="link" *ngFor="let item of categories">
+          <a routerLinkActive="active" [routerLink]="['category',item.id]">{{item.name}}</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="hide-mobile">
+  <div>
+    <nav>
+      <a class="logo" routerLink="home">
+        <img src="./assets/svg/logo_yard_sale.svg" alt="logo">
+      </a>
+      <ul>
+        <li><a routerLinkActive="active" routerLink="login">Login</a></li>
+        <li><a routerLinkActive="active" routerLink="home">All</a></li>
+        <li *ngFor="let item of categories">
+          <a routerLinkActive="active" [routerLink]="['category',item.id]">{{item.name}}</a></li>
+      </ul>
+    </nav>
+    <div class="info">
+      <div class="account">
+        <button *ngIf="!profile; else elseBlock" class="btn btn-success" (click)="login()">Ingresar</button>
+        <ng-template #elseBlock>
+          <a routerLink="profile">{{profile?.name}}</a>
+          <button type="button" class="btn btn-danger" (click)="logout()">Logout</button>
+        </ng-template>
+      </div>
+      <div>
+        <a href="">
+          <img src="./assets/svg/icon_shopping_cart.svg" alt="logo">
+        </a>
+        <span class="counter">{{contador}}</span>
+      </div>
+    </div>
+  </div>
+</div>

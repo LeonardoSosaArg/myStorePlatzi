@@ -1,0 +1,7 @@
+<div class="img-center">
+<img (load)="imgLoaded()" (error)="imgError()" [src]="img" *ngIf="img; else elseImg">
+</div>
+<!-- IMAGEN POR DEFECTO, EN CASO DE QUE LA URL QUE RECIBIMOS NO EXISTA -->
+<ng-template #elseImg>
+    <img [src]="imageDefault" width="200">
+</ng-template>

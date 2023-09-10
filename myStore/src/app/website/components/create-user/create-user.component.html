@@ -1,0 +1,26 @@
+<section class="container pt-5">
+  <div class="">
+    <form [formGroup]="formulario" autocomplete="off" class="__form">
+      <h1>New User</h1>
+      <div class="container-controls">
+        <div class="input-group-lg">
+          <input formControlName="name" class="form-control" type="text" placeholder="Name">
+          <small *ngIf="nombreNoValido" class="form-text text-danger">*Debe ingresar un nombre</small>
+        </div>
+        <div class="input-group-lg">
+          <input formControlName="email" class="form-control" type="email" placeholder="Email">
+          <small *ngIf="emailNoValido" class="form-text text-danger">*Debe ingresar un email</small>
+        </div>
+        <div class="input-group-lg">
+          <input autocomplete="off" formControlName="password" class="form-control" type="password"
+            placeholder="Contraseña">
+          <small *ngIf="passwordNoValido" class="form-text text-danger">*Debe ingresar una contraseña</small>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col"><button (click)="formulario.reset" class="btn btn-outline-primary">Cancelar</button></div>
+        <div class="col"><button (click)="createUser()" class="btn btn-outline-success">Create</button></div>
+      </div>
+    </form>
+  </div>
+</section>

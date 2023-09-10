@@ -1,0 +1,24 @@
+img {
+  max-width: 100%;
+}
+
+//TABLET
+@media screen and (min-width: 40em) and (max-width: 63.9em) {
+  img {
+    // max-height: 173px;
+    // min-height: 173px;
+  }
+}
+
+//DESKTOP
+@media screen and (min-width: 64em) {
+  img{
+    // max-height: 173px;
+    // min-height: 173px;
+  }
+}
+
+.img-center {
+  display: flex;
+  justify-content: center;
+}
